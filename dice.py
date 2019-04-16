@@ -8,11 +8,11 @@ WORDLIST = 'dicewords'
 
 def roll():
     with open('/dev/urandom') as rand:
-        return ord(rand.read(1)) % 6 + 1
+        return ord(rand.read(1)) % 5 + 1
 
 def word():
     combo = []
-    for x in range(5):
+    for x in range(6):
         combo.append(roll())
 
     with open(WORDLIST) as words:
