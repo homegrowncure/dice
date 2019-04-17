@@ -6,9 +6,11 @@ import sys
 
 WORDLIST = 'dicewords'
 
+
 def roll():
     with open('/dev/urandom') as rand:
         return ord(rand.read(1)) % 5 + 1
+
 
 def word():
     combo = []
@@ -21,5 +23,9 @@ def word():
             if l[:5] == ''.join(str(x) for x in combo):
                 return l[6:len(l) - 1]
 
+
 for x in range(int(sys.argv[1]) if len(sys.argv) > 1 else 6):
     print word(),
+
+
+print("hello world")
